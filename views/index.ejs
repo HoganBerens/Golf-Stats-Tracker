@@ -2,10 +2,17 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Welcome to <%= title %></h1>
+    <p>
+      This application is going to give you insight into the good and bad of
+      your golf game!
+    </p>
+    <br />
+    <p>Sign in using your google account to continue!</p>
+    <a href="/auth/google">Sign In</a>
+    <a href="/logout">Log Out</a>
   </body>
 </html>

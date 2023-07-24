@@ -3,6 +3,10 @@ var router = express.Router();
 const passport = require("passport");
 
 /* GET home page. */
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Golf-Stats-Tracker" });
+});
+
 router.get(
   "/auth/google",
   passport.authenticate(
@@ -19,14 +23,18 @@ router.get(
 router.get(
   "/oauth2callback",
   passport.authenticate("google", {
-    successRedirect: "/movies",
-    failureRedirect: "/movies",
+    successRedirect: "/dashboard",
+    failureRedirect: "/",
   })
 );
 
+router.get("/dashboard", function (req, res) {
+  res.render("dashboard");
+});
+
 router.get("/logout", function (req, res) {
   req.logout(function () {
-    res.redirect("/movies");
+    res.redirect("/");
   });
 });
 
