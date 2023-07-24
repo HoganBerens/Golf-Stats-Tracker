@@ -1,0 +1,12 @@
+<%- include("../partials/header")%>
+<h1>
+  Here is where i will have a form to submit the last score to the scores array
+</h1>
+
+<form action="/scores/add" method="POST">
+  <label>What was the total par for the course</label>
+  <input type="number" name="totalPar" />
+  <label>What was your total score for the round</label>
+  <input type="number" name="totalScore" />
+  <input type="submit" value="Add lastScore to scores Array" />
+</form>

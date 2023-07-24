@@ -1,2 +1,44 @@
 <%- include("../partials/header")%>
 <div>This is where you will make a new score brother</div>
+
+<h2>Enter New Hole Score</h2>
+
+<h3>Hole: <%= user.lastScore.length +1 %></h3>
+
+<form action="/scores" method="POST">
+  <label>Par for hole: </label>
+  <input type="number" name="par" />
+  <label>What club did you hit off the tee?</label>
+  <select name="clubHitOffTee">
+    <option hidden="true"></option>
+  </select>
+  <br />
+  <label>Did you hit the fairway?</label>
+  <br />
+  <label>Yes</label>
+
+  <input value="true" type="radio" name="fairwayHit" />
+  <br />
+  <label>No</label>
+
+  <input value="false" type="radio" name="fairwayHit" />
+  <br />
+
+  <label>Did you hit the green?</label>
+  <br />
+  <label>Yes</label>
+
+  <input value="true" type="radio" name="greenHit" />
+  <br />
+  <label>No</label>
+
+  <input value="false" type="radio" name="greenHit" />
+  <br />
+
+  <label>How many putts did you have?</label>
+  <input name="putts" type="number" />
+  <label>What was your score for the hole?</label>
+  <input name="score" type="number" />
+  <input type="submit" value="Add hole to user.lastScore" />
+</form>
+<a href="/scores/add">Finished Adding Holes?</a>
