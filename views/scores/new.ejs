@@ -1,16 +1,19 @@
 <%- include("../partials/header")%>
-<div>This is where you will make a new score brother</div>
 
 <h2>Enter New Hole Score</h2>
 
-<h3>Hole: <%= user.lastScore.length +1 %></h3>
+<h3>Hole: <%= user.count %></h3>
 
-<form action="/scores" method="POST">
+<form autocomplete="off" action="/scores" method="POST">
   <label>Par for hole: </label>
   <input type="number" name="par" />
+  <br />
   <label>What club did you hit off the tee?</label>
   <select name="clubHitOffTee">
     <option hidden="true"></option>
+    <% clubs.forEach((club) => { %>
+    <option value="<%- club.name %>"><%= club.name %></option>
+    <% }) %>
   </select>
   <br />
   <label>Did you hit the fairway?</label>
@@ -22,6 +25,14 @@
   <label>No</label>
 
   <input value="false" type="radio" name="fairwayHit" />
+  <br />
+  <label>What club did you hit into the green?</label>
+  <select name="clubHitSecond">
+    <option hidden="true"></option>
+    <% clubs.forEach((club) => { %>
+    <option value=" <%- club.name %>"><%= club.name %></option>
+    <% }) %>
+  </select>
   <br />
 
   <label>Did you hit the green?</label>

@@ -4,11 +4,14 @@
 <br /><br />
 <h2>Your Scores:</h2>
 <%if (scores.length) {scores.map((score) => { score.map((hole) => { %>
-<div><%= hole.par %></div>
-<div><%= hole.fairwayHit %></div>
-<div><%= hole.greenHit %></div>
-<div><%= hole.putts %></div>
-<div><%= hole.score %></div>
+<div>
+  <div><%= hole.par %></div>
+  <div><%= hole.fairwayHit %></div>
+  <div><%= hole.greenHit %></div>
+  <div><%= hole.putts %></div>
+  <div><%= hole.score %></div>
+</div>
+<br />
 
 <% }) }) } else {%>
 <div>No Scores Yet</div>

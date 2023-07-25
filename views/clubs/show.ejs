@@ -1,18 +1,19 @@
 <%- include("../partials/header")%>
-<div>
-  Here is where i will show all the clubs and you will have the ability to
-  update all of them
-</div>
 
 <br /><br />
 <h2>Your Clubs:</h2>
+<br />
+<h3>Please exclude putter</h3>
+<br />
 <%if (clubs.length) {clubs.map((club) => {%>
-<div><%= club.name %></div>
-<div><%= club.distance %></div>
+<div>Club: <%= club.name %></div>
+<div>Distance: <%= club.distance %> yards</div>
+<br />
+<br />
 <%}) } else {%>
 <div>No Clubs Yet</div>
 <% } %>
-<form id="add-review-form" method="POST" action="/clubs">
+<form autocomplete="off" id="add-review-form" method="POST" action="/clubs">
   <label>Club Name: </label>
   <input type="text" name="name" />
   <label>How far do you hit it?</label>

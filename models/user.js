@@ -2,35 +2,33 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const clubSchema = new Schema({
-  name: { type: String, require: true },
-  distance: { type: Number, require: true },
+  name: { type: String },
+  distance: { type: Number },
 });
 
 const holeSchema = new Schema({
-  par: { type: Number, require: true },
-  clubHitOffTee: {
-    type: String /* 
-        require: true, */,
-  },
+  par: { type: Number },
+  clubHitOffTee: {},
   fairwayHit: {
     type: Boolean,
-    fairwayMissed: String,
   },
-  clubHitSecond: {
-    type: String,
-  },
+  fairwayMissed: { type: String },
+  clubHitSecond: {},
   greenHit: {
     type: Boolean,
-    greenMissed: String,
-    require: true,
   },
+  greenMissed: { type: String },
   putts: {
     type: Number,
-    require: true,
   },
   score: {
     type: Number,
-    require: true,
+  },
+  totalPar: {
+    type: Number,
+  },
+  totalScore: {
+    type: Number,
   },
 });
 
@@ -46,6 +44,7 @@ const userSchema = new Schema(
     scores: [],
     lastScore: [holeSchema],
     clubs: [clubSchema],
+    count: { type: Number, default: 1 },
   },
   {
     timestamps: true,

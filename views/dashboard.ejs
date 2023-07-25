@@ -1,11 +1,21 @@
 <%- include("./partials/header")%>
 <div>
+  <h1>Please enter clubs before entering a score</h1>
   <div>
-    <div>Show Most recent Score</div>
-    <a href="/scores/new">Add New Score</a>
-  </div>
-  <div>
-    <div>Show Clubs List</div>
+    <% if (user.clubs.length) { user.clubs.forEach((club) => { %>
+    <div><%= club.name %></div>
+    <%}) } else { %>
+    <div>No Clubs yet</div>
+    <% } %>
     <a href="/clubs">Update Clubs</a>
+  </div>
+  <br />
+  <div>
+    <% if (user.lastScore.length) {%>
+    <div><%= user.lastScore %></div>
+    <% } else { %>
+    <div>No Scores yet</div>
+    <% } %>
+    <a href="/scores/new">Add New Score</a>
   </div>
 </div>
