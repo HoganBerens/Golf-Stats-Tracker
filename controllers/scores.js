@@ -25,6 +25,7 @@ async function submit(req, res) {
   user.lastScore.push(req.body);
   user.scores.push(user.lastScore);
   user.count = 1;
+  // here i am counting
   await user.save();
   res.redirect("/scores");
 }
