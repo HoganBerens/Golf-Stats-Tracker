@@ -2,7 +2,14 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+<<<<<<< HEAD
 a {
   color: #00b7ff;
 }
 /* Header Style */
+=======
+
+a {
+  color: #00B7FF;
+}
+>>>>>>> 1953f84 (initial commit)
