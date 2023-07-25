@@ -8,4 +8,6 @@ router.get("/clubs", ensureLoggedIn, clubsCtrl.show);
 
 router.post("/clubs", ensureLoggedIn, clubsCtrl.new);
 
+router.delete("/clubs/:id", ensureLoggedIn, clubsCtrl.delete);
+
 module.exports = router;

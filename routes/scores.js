@@ -14,4 +14,6 @@ router.post("/scores/add", ensureLoggedIn, scoresCtrl.submit);
 
 router.post("/scores", ensureLoggedIn, scoresCtrl.create);
 
+router.delete("/scores/:id", ensureLoggedIn, scoresCtrl.delete);
+
 module.exports = router;

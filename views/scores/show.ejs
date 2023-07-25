@@ -1,18 +1,19 @@
 <%- include("../partials/header")%>
-<div>This is where you will see all the scores brother</div>
 
-<br /><br />
 <h2>Your Scores:</h2>
 <%if (scores.length) {scores.map((score) => { score.map((hole) => { %>
 <div>
-  <div><%= hole.par %></div>
-  <div><%= hole.fairwayHit %></div>
-  <div><%= hole.greenHit %></div>
-  <div><%= hole.putts %></div>
-  <div><%= hole.score %></div>
+  <div>Par:</div>
+  <div><%= score[1].totalPar %></div>
+  <div>Total Score:</div>
+  <div><%= score[1].totalScore %></div>
+  <% score.map((el) => { %>
+  <form action="/scores/<%= el._id %>?_method=DELETE" method="POST">
+    <button type="submit">X</button>
+  </form>
+  <% })%>
 </div>
 <br />
-
 <% }) }) } else {%>
 <div>No Scores Yet</div>
 <% } %>

@@ -29,10 +29,18 @@ async function submit(req, res) {
   res.redirect("/scores");
 }
 
+async function deleteScore(req, res) {
+  let user = req.user;
+  user.scores.remove(req.params.id);
+  await user.save();
+  res.redirect("/scores");
+}
+
 module.exports = {
   create,
   new: newScore,
   show,
   addToUser,
   submit,
+  delete: deleteScore,
 };

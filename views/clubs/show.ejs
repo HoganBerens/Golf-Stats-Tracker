@@ -8,6 +8,10 @@
 <%if (clubs.length) {clubs.map((club) => {%>
 <div>Club: <%= club.name %></div>
 <div>Distance: <%= club.distance %> yards</div>
+<form action="/clubs/<%= club._id %>?_method=DELETE" method="POST">
+  <button type="submit">X</button>
+</form>
+<div></div>
 <br />
 <br />
 <%}) } else {%>

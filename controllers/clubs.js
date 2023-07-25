@@ -11,4 +11,11 @@ async function newClub(req, res) {
   res.redirect("/clubs");
 }
 
-module.exports = { show, new: newClub };
+async function deleteClub(req, res) {
+  let user = req.user;
+  user.clubs.remove(req.params.id);
+  await user.save();
+  res.redirect("/clubs");
+}
+
+module.exports = { show, new: newClub, delete: deleteClub };
