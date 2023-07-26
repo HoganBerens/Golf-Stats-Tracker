@@ -1,9 +1,8 @@
 <%- include("../partials/header")%>
 
-<br /><br />
-<h2>Your Clubs:</h2>
 <br />
-<h3>Please exclude putter</h3>
+<h2>Your Clubs:</h2>
+
 <br />
 <%if (clubs.length) {clubs.map((club) => {%>
 <div>Club: <%= club.name %></div>
@@ -11,13 +10,16 @@
 <form action="/clubs/<%= club._id %>?_method=DELETE" method="POST">
   <button type="submit">X</button>
 </form>
+<a href="/clubs/<%= club._id %>?_method=PUT" method="POST">Edit</a>
 <div></div>
 <br />
 <br />
 <%}) } else {%>
 <div>No Clubs Yet</div>
 <% } %>
+<h3>Please exclude putter</h3>
 <form autocomplete="off" id="add-review-form" method="POST" action="/clubs">
+  <h4>Enter Here:</h4>
   <label>Club Name: </label>
   <input type="text" name="name" />
   <label>How far do you hit it?</label>

@@ -1,0 +1,14 @@
+<%- include("../partials/header")%>
+
+<div>Name:</div>
+<div><%= club.name %></div>
+<div>Distance:</div>
+<div><%= club.distance %></div>
+
+<form action="/clubs/<%= id %>?_method=PUT" method="POST">
+  <label>Club Name: </label>
+  <input type="text" name="name" />
+  <label>How far do you hit it?</label>
+  <input type="number" name="distance" />
+  <input type="submit" value="Update Club" />
+</form>

@@ -43,7 +43,14 @@ const userSchema = new Schema(
     email: String,
     avatar: String,
     scores: [],
-    lastScore: [holeSchema],
+    lastScore: {
+      holes: [holeSchema],
+      totals: [],
+    },
+    displayedScore: {
+      holes: [],
+      totals: [],
+    },
     clubs: [clubSchema],
     count: { type: Number, default: 1 },
   },

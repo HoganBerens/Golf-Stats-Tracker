@@ -1,26 +1,31 @@
 <%- include("./partials/header")%>
 <div>
-  <h1>Please enter clubs before entering a score</h1>
+  <h1>Please enter clubs!</h1>
   <div>
-    <% if (user.clubs.length) { user.clubs.forEach((club) => { %>
+    <% if (user.clubs.length) {%>
+    <a href="/scores/new">Add New Score</a>
+    <br />
+    <div>
+      <% if (user.lastScore.length) {%>
+      <h3>Most recent Score</h3>
+      <div>Par:</div>
+      <div><%= user.lastScore.totals[0].totalPar %></div>
+      <div>Total Score:</div>
+      <div><%= user.lastScore.totals[0].totalScore %></div>
+
+      <% } else { %>
+      <div>No Scores yet</div>
+      <% } %>
+    </div>
+    <br />
+    <br />
+    <%user.clubs.forEach((club) => { %>
     <div><%= club.name %></div>
+
     <%}) } else { %>
     <div>No Clubs yet</div>
     <% } %>
-    <a href="/clubs">Update Clubs</a>
+    <a href="/clubs">Enter Clubs</a>
   </div>
   <br />
-  <div>
-    <% if (user.lastScore.length) {%>
-    <h3>Most recent Score</h3>
-    <div>Par:</div>
-    <div><%= user.lastScore[1].totalPar %></div>
-    <div>Total Score:</div>
-    <div><%= user.lastScore[1].totalScore %></div>
-
-    <% } else { %>
-    <div>No Scores yet</div>
-    <% } %>
-    <a href="/scores/new">Add New Score</a>
-  </div>
 </div>

@@ -1,20 +1,10 @@
 <%- include("../partials/header")%>
 
 <h2>Your Scores:</h2>
-<%if (scores.length) {scores.map((score) => { score.map((hole) => { %>
-<div>
-  <div>Par:</div>
-  <div><%= score[1].totalPar %></div>
-  <div>Total Score:</div>
-  <div><%= score[1].totalScore %></div>
-  <% score.map((el) => { %>
-  <form action="/scores/<%= el._id %>?_method=DELETE" method="POST">
-    <button type="submit">X</button>
-  </form>
-  <% })%>
-</div>
-<br />
-<% }) }) } else {%>
+<%if (scores.length) {scores.map((score) => {%>
+<div><%= score.totals %></div>
+<div><%= score.holes %></div>
+<% }) } else {%>
 <div>No Scores Yet</div>
 <% } %>
 
