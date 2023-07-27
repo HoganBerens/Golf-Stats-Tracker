@@ -2,7 +2,9 @@
 <div class="container">
   <div class="dashboard-container">
     <div class="dashboard-scores-container">
-      <% if (user.clubs.length) {%> <% if (user.lastScore.totals.length) {%>
+      <% if (user.clubs.length) {%>
+      <a href="/scores/new">Add New Score</a><% if %>
+      <%(user.lastScore.totals.length) {%>
       <h3>Most recent Score</h3>
       <div class="dashboard-scores-display">
         <div class="dashboard-score">
@@ -14,7 +16,7 @@
           -1].totalScore %>
         </div>
       </div>
-      <a href="/scores/new">Add New Score</a>
+
       <% } else { %>
       <div>No Scores yet</div>
       <% } %>
