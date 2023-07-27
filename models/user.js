@@ -47,10 +47,6 @@ const userSchema = new Schema(
       holes: [holeSchema],
       totals: [],
     },
-    displayedScore: {
-      holes: [],
-      totals: [],
-    },
     clubs: [clubSchema],
     count: { type: Number, default: 1 },
   },

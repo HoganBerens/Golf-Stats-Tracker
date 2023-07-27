@@ -1,8 +1,6 @@
 const holeSchema = require("../models/user");
 
 function newScore(req, res) {
-  req.user.displayedScore.totals = req.user.lastScore.totals;
-  req.user.displayedScore.holes = req.user.lastScore.holes;
   req.user.lastScore = {
     holes: [],
     totals: [],

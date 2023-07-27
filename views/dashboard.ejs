@@ -1,17 +1,20 @@
 <%- include("./partials/header")%>
 <div>
-  <h1>Please enter clubs!</h1>
   <div>
     <% if (user.clubs.length) {%>
     <a href="/scores/new">Add New Score</a>
     <br />
     <div>
-      <% if (user.lastScore.length) {%>
+      <% if (user.lastScore.totals.length) {%>
       <h3>Most recent Score</h3>
       <div>Par:</div>
-      <div><%= user.lastScore.totals[0].totalPar %></div>
+      <div>
+        <%= user.lastScore.totals[user.lastScore.totals.length -1].totalPar %>
+      </div>
       <div>Total Score:</div>
-      <div><%= user.lastScore.totals[0].totalScore %></div>
+      <div>
+        <%= user.lastScore.totals[user.lastScore.totals.length -1].totalScore %>
+      </div>
 
       <% } else { %>
       <div>No Scores yet</div>
@@ -23,6 +26,7 @@
     <div><%= club.name %></div>
 
     <%}) } else { %>
+    <h2>Please enter clubs!</h2>
     <div>No Clubs yet</div>
     <% } %>
     <a href="/clubs">Enter Clubs</a>

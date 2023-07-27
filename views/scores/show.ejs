@@ -1,10 +1,14 @@
 <%- include("../partials/header")%>
 
 <h2>Your Scores:</h2>
-<%if (scores.length) {scores.map((score) => {%>
-<div><%= score.totals %></div>
-<div><%= score.holes %></div>
-<% }) } else {%>
+<%if (scores.length) {scores.map((score, scoreIndex) => {%>
+<div>Score Number: <%= scoreIndex + 1%></div>
+<div>Total Par: <%= score.totals[ scoreIndex ].totalPar %></div>
+<div>Total Score: <%= score.totals[scoreIndex].totalScore %></div>
+<br />
+<% score.holes.map((hole) => {%>
+<!-- <div><%= hole.par%></div> -->
+<% }) }) } else {%>
 <div>No Scores Yet</div>
 <% } %>
 

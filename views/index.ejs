@@ -5,14 +5,17 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Welcome to <%= title %></h1>
-    <p>
-      This application is going to give you insight into the good and bad of
-      your golf game!
-    </p>
-    <br />
-    <p>Sign in using your google account to continue!</p>
-    <a href="/auth/google">Sign In</a>
-    <a href="/logout">Log Out</a>
+    <div class="login-wrapper-container">
+      <div class="login-wrapper">
+        <h1>Welcome to <%= title %></h1>
+        <p>
+          This application is going to give you insight into the good and bad of
+          your golf game!
+        </p>
+        <br />
+        <p>Sign in using your google account to continue!</p>
+        <a href="/auth/google">Sign In</a>
+      </div>
+    </div>
   </body>
 </html>

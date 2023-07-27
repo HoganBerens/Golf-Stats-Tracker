@@ -50,7 +50,9 @@
   <input name="putts" type="number" />
   <label>What was your score for the hole?</label>
   <input name="score" type="number" />
+  <% if (user.count < 18) {%>
   <input type="submit" value="Next Hole" />
+  <%}%>
 </form>
 <br />
 <br />
