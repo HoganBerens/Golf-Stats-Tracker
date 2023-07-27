@@ -58,6 +58,7 @@ a {
   justify-content: space-around;
   align-items: center;
   grid-row: span 1;
+  /* more styles bud */
 }
 
 /* dashboard style */
