@@ -4,17 +4,117 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100vh;
   width: 100vw;
+  display: grid;
+  grid-template-rows: 1fr 10fr;
 }
 a {
-  color: #00b7ff;
+  color: black;
+  text-decoration: underline;
+  font-size: 18px;
 }
+
 /* Index Ejs Style */
-.login-wrapper {
+
+.container {
   display: flex;
+  grid-row: span 10;
   background-color: rgb(209, 244, 255);
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
+}
+.login-wrapper {
+  display: flex;
+  background-color: rgb(234, 250, 254);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80%;
+  width: 80%;
+}
+
+.login-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+.login-button {
+  font-size: 18px;
+}
+.login-img {
+  height: 20px;
+  width: 20px;
+}
+
+/* header style */
+
+.header-container {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  grid-row: span 1;
+}
+
+/* dashboard style */
+
+.dashboard-container {
+  background-color: rgb(255, 255, 255);
+  height: 70%;
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dashboard-scores-container {
+  height: 40%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.dashboard-clubs-container {
+  width: 30%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.dashboard-clubs-display {
+  height: 100%;
+  width: 50%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.dashboard-club {
+  text-align: center;
+  font-size: 16px;
+  min-height: 58.58px;
+}
+
+.dashboard-clubs-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.dashboard-scores-display {
+  font-size: 16px;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.dashboard-score {
+  margin-bottom: 20px;
 }

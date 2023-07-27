@@ -1,35 +1,37 @@
 <%- include("./partials/header")%>
-<div>
-  <div>
-    <% if (user.clubs.length) {%>
-    <a href="/scores/new">Add New Score</a>
-    <br />
-    <div>
-      <% if (user.lastScore.totals.length) {%>
+<div class="container">
+  <div class="dashboard-container">
+    <div class="dashboard-scores-container">
+      <% if (user.clubs.length) {%> <% if (user.lastScore.totals.length) {%>
       <h3>Most recent Score</h3>
-      <div>Par:</div>
-      <div>
-        <%= user.lastScore.totals[user.lastScore.totals.length -1].totalPar %>
+      <div class="dashboard-scores-display">
+        <div class="dashboard-score">
+          Par: <%= user.lastScore.totals[user.lastScore.totals.length
+          -1].totalPar %>
+        </div>
+        <div>
+          Total Score: <%= user.lastScore.totals[user.lastScore.totals.length
+          -1].totalScore %>
+        </div>
       </div>
-      <div>Total Score:</div>
-      <div>
-        <%= user.lastScore.totals[user.lastScore.totals.length -1].totalScore %>
-      </div>
-
+      <a href="/scores/new">Add New Score</a>
       <% } else { %>
       <div>No Scores yet</div>
       <% } %>
     </div>
-    <br />
-    <br />
-    <%user.clubs.forEach((club) => { %>
-    <div><%= club.name %></div>
+    <div class="dashboard-clubs-container">
+      <div class="dashboard-clubs-title">Your Clubs:</div>
+      <div class="dashboard-clubs-display">
+        <%user.clubs.forEach((club) => { %>
+        <div class="dashboard-club"><%= club.name %></div>
 
-    <%}) } else { %>
-    <h2>Please enter clubs!</h2>
-    <div>No Clubs yet</div>
-    <% } %>
-    <a href="/clubs">Enter Clubs</a>
+        <%}) } else { %>
+
+        <h2>Please enter clubs!</h2>
+        <div>No Clubs yet</div>
+        <% } %>
+      </div>
+      <a href="/clubs">Update Clubs</a>
+    </div>
   </div>
-  <br />
 </div>
