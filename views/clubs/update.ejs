@@ -1,14 +1,32 @@
 <%- include("../partials/header")%>
 
-<div>Name:</div>
-<div><%= club.name %></div>
-<div>Distance:</div>
-<div><%= club.distance %></div>
+<div class="edit-club-container">
+  <div class="edit-club-form-container">
+    <div class="edit-club-display">
+      <div class="edit-club-item">
+        <div>Name:</div>
+        <div><%= club.name %></div>
+      </div>
+      <div class="edit-club-item">
+        <div>Distance:</div>
+        <div><%= club.distance %></div>
+      </div>
+    </div>
 
-<form action="/clubs/<%= id %>?_method=PUT" method="POST">
-  <label>Club Name: </label>
-  <input type="text" name="name" />
-  <label>How far do you hit it?</label>
-  <input type="number" name="distance" />
-  <input type="submit" value="Update Club" />
-</form>
+    <form
+      class="edit-club-form"
+      action="/clubs/<%= id %>?_method=PUT"
+      method="POST"
+    >
+      <div class="edit-clubs-form-item">
+        <label>Club Name: </label>
+        <input type="text" name="name" />
+      </div>
+      <div class="edit-clubs-form-item">
+        <label>How far do you hit it?</label>
+        <input type="number" name="distance" />
+      </div>
+      <input class="edit-club-submit" type="submit" value="Update Club" />
+    </form>
+  </div>
+</div>

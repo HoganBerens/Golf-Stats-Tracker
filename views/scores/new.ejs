@@ -1,59 +1,62 @@
 <%- include("../partials/header")%>
+<div class="new-score-container">
+  <div class="new-score-title">Enter New Hole</div>
 
-<h2>Enter New Hole Score</h2>
+  <div class="new-score-hole-title">Hole: <%= user.count %></div>
 
-<h3>Hole: <%= user.count %></h3>
-
-<form autocomplete="off" action="/scores" method="POST">
-  <label>Par for hole: </label>
-  <input type="number" name="par" />
-  <br />
-  <label>What club did you hit off the tee?</label>
-  <select name="clubHitOffTee">
-    <option hidden="true"></option>
-    <% clubs.forEach((club) => { %>
-    <option value="<%- club.name %>"><%= club.name %></option>
-    <% }) %>
-  </select>
-  <br />
-  <label>Did you hit the fairway?</label>
-  <br />
-  <label>Yes</label>
-
-  <input value="true" type="radio" name="fairwayHit" />
-  <br />
-  <label>No</label>
-
-  <input value="false" type="radio" name="fairwayHit" />
-  <br />
-  <label>What club did you hit into the green?</label>
-  <select name="clubHitSecond">
-    <option hidden="true"></option>
-    <% clubs.forEach((club) => { %>
-    <option value=" <%- club.name %>"><%= club.name %></option>
-    <% }) %>
-  </select>
-  <br />
-
-  <label>Did you hit the green?</label>
-  <br />
-  <label>Yes</label>
-
-  <input value="true" type="radio" name="greenHit" />
-  <br />
-  <label>No</label>
-
-  <input value="false" type="radio" name="greenHit" />
-  <br />
-
-  <label>How many putts did you have?</label>
-  <input name="putts" type="number" />
-  <label>What was your score for the hole?</label>
-  <input name="score" type="number" />
-  <% if (user.count < 18) {%>
-  <input type="submit" value="Next Hole" />
-  <%}%>
-</form>
-<br />
-<br />
-<a href="/scores/add">Finished Adding Holes?</a>
+  <form
+    autocomplete="off"
+    action="/scores"
+    method="POST"
+    class="new-score-form"
+  >
+    <div class="new-score-item">
+      <label>Par for hole: </label>
+      <input type="number" name="par" />
+    </div>
+    <div class="new-score-item">
+      <label>What club did you hit off the tee?</label>
+      <select name="clubHitOffTee">
+        <option hidden="true"></option>
+        <% clubs.forEach((club) => { %>
+        <option value="<%- club.name %>"><%= club.name %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="new-score-item">
+      <label>Did you hit the fairway?</label>
+      <label>Yes</label>
+      <input value="true" type="radio" name="fairwayHit" />
+      <label>No</label>
+      <input value="false" type="radio" name="fairwayHit" />
+    </div>
+    <div class="new-score-item">
+      <label>What club did you hit into the green?</label>
+      <select name="clubHitSecond">
+        <option hidden="true"></option>
+        <% clubs.forEach((club) => { %>
+        <option value=" <%- club.name %>"><%= club.name %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="new-score-item">
+      <label>Did you hit the green?</label>
+      <label>Yes</label>
+      <input value="true" type="radio" name="greenHit" />
+      <label>No</label>
+      <input value="false" type="radio" name="greenHit" />
+    </div>
+    <div class="new-score-item">
+      <label>How many putts did you have?</label>
+      <input name="putts" type="number" />
+    </div>
+    <div class="new-score-item">
+      <label>What was your score for the hole?</label>
+      <input name="score" type="number" />
+    </div>
+    <% if (user.count < 18) {%>
+    <input class="new-score-submit" type="submit" value="Next Hole" />
+    <%}%>
+  </form>
+  <a class="new-score-link" href="/scores/add">Finished Adding Holes?</a>
+</div>

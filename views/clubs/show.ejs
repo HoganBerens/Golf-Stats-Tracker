@@ -1,28 +1,46 @@
 <%- include("../partials/header")%>
 
-<br />
-<h2>Your Clubs:</h2>
+<div class="update-clubs-container">
+  <div class="update-clubs-title">Your Clubs</div>
+  <div class="update-clubs-display-container">
+    <div class="update-clubs-display">
+      <%if (clubs.length) {clubs.map((club) => {%>
+      <div class="update-clubs-usersClubs">
+        <div>Club: <%= club.name %></div>
+        <div>Distance: <%= club.distance %> yards</div>
+        <div class="update-clubs-utils">
+          <form action="/clubs/<%= club._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+          <a href="/clubs/<%= club._id %>?_method=PUT" method="POST">Edit</a>
+        </div>
+      </div>
+      <%}) %>
+    </div>
+    <% } else {%>
 
-<br />
-<%if (clubs.length) {clubs.map((club) => {%>
-<div>Club: <%= club.name %></div>
-<div>Distance: <%= club.distance %> yards</div>
-<form action="/clubs/<%= club._id %>?_method=DELETE" method="POST">
-  <button type="submit">X</button>
-</form>
-<a href="/clubs/<%= club._id %>?_method=PUT" method="POST">Edit</a>
-<div></div>
-<br />
-<br />
-<%}) } else {%>
-<div>No Clubs Yet</div>
-<% } %>
-<h3>Please exclude putter</h3>
-<form autocomplete="off" id="add-review-form" method="POST" action="/clubs">
-  <h4>Enter Here:</h4>
-  <label>Club Name: </label>
-  <input type="text" name="name" />
-  <label>How far do you hit it?</label>
-  <input type="number" name="distance" />
-  <input type="submit" value="Add Club" />
-</form>
+    <div class="update-clubs-noClubs">No Clubs Yet</div>
+    <% } %>
+    <div class="update-clubs-enterClub">
+      <h3>Please exclude putter</h3>
+      <form
+        class="update-clubs-enterClubForm"
+        autocomplete="off"
+        id="add-review-form"
+        method="POST"
+        action="/clubs"
+      >
+        <div class="update-clubs-form-title">Enter New Club Here:</div>
+        <div class="update-clubs-item">
+          <label>Club Name: </label>
+          <input type="text" name="name" />
+        </div>
+        <div class="update-clubs-item">
+          <label>How far do you hit it?</label>
+          <input type="number" name="distance" />
+        </div>
+        <input class="update-clubs-submit" type="submit" value="Add Club" />
+      </form>
+    </div>
+  </div>
+</div>

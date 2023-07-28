@@ -1,10 +1,15 @@
 <%- include("../partials/header")%>
-<h1>Submit your totals for the round</h1>
-
-<form action="/scores/add" method="POST">
-  <label>What was the total par for the course</label>
-  <input type="number" name="totalPar" />
-  <label>What was your total score for the round</label>
-  <input type="number" name="totalScore" />
-  <input type="submit" value="Submit Score" />
-</form>
+<div class="container">
+  <div class="submit-score-title">Submit your totals for the round</div>
+  <form class="submit-score-form" action="/scores/add" method="POST">
+    <div class="submit-score-form-item">
+      <label>What was the total par for the course</label>
+      <input class="submit-score-form-input" type="number" name="totalPar" />
+    </div>
+    <div class="submit-score-form-item">
+      <label>What was your total score for the round</label>
+      <input class="submit-score-form-input" type="number" name="totalScore" />
+    </div>
+    <input class="submit-score-button" type="submit" value="Submit Score" />
+  </form>
+</div>

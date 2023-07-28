@@ -18,7 +18,7 @@ a {
 .container {
   display: flex;
   grid-row: span 10;
-  background-color: rgb(209, 244, 255);
+  background-color: rgb(173, 221, 255);
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -52,7 +52,7 @@ a {
 /* header style */
 
 .header-container {
-  background-color: rgb(246, 250, 253);
+  background-color: rgb(234, 250, 254);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -64,7 +64,7 @@ a {
 /* dashboard style */
 
 .dashboard-container {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(234, 250, 254);
   height: 70%;
   width: 55%;
   display: flex;
@@ -87,6 +87,9 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+.dashboard-scores-mostRecentScore {
+  font-size: 20px;
 }
 .dashboard-clubs-display {
   height: 100%;
@@ -118,4 +121,252 @@ a {
 }
 .dashboard-score {
   margin-bottom: 20px;
+}
+
+.dashboard-newScore {
+  margin-bottom: 20px;
+}
+
+.dashboard-no-clubs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-no-clubs-item {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.dashboard-no-clubs-item2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+/* NewScore style */
+
+.new-score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new-score-title {
+  font-size: 30px;
+  margin: 80px 0 40px;
+}
+.new-score-hole-title {
+  font-size: 24px;
+  margin: 30px 0 40px;
+}
+
+.new-score-form {
+  display: flex;
+  background-color: rgb(234, 250, 254);
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  padding: 20px;
+}
+.new-score-item {
+  margin: 10px 0;
+}
+
+.new-score-submit {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.new-score-link {
+  font-size: 20px;
+  margin: 80px 0;
+}
+
+/* Clubs Page */
+.update-clubs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.update-clubs-title {
+  font-size: 30px;
+  margin: 80px 0 40px;
+}
+.update-clubs-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.update-clubs-display {
+  background-color: rgb(234, 250, 254);
+  display: flex;
+  height: 300px;
+  max-height: 300px;
+  width: 408px;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.update-clubs-usersClubs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 200px;
+  height: 100px;
+  font-size: 15px;
+  border-bottom: solid black 1px;
+}
+
+.update-clubs-utils {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.update-clubs-noClubs {
+  font-size: 20px;
+}
+
+.update-clubs-enterClub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.update-clubs-enterClubForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.update-clubs-form-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.update-clubs-item {
+  margin: 10px 0;
+}
+
+.update-clubs-submit {
+  font-size: 20px;
+}
+
+/* Edit Club */
+
+.edit-club-container {
+  display: flex;
+  grid-row: span 10;
+  background-color: rgb(173, 221, 255);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.edit-club-form-container {
+  background-color: rgb(234, 250, 254);
+  height: 400px;
+}
+
+.edit-club-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  height: 200px;
+}
+
+.edit-club-item {
+  display: flex;
+  margin: 10px;
+}
+
+.edit-club-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-clubs-form-item {
+  display: flex;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.edit-club-submit {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Submit Score */
+
+.submit-score-title {
+  font-size: 24px;
+  margin-bottom: 60px;
+}
+
+.submit-score-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.submit-score-form-item {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  font-size: 16px;
+  align-items: center;
+}
+
+.submit-score-form-input {
+  max-width: 100px;
+  margin-top: 10px;
+}
+.submit-score-button {
+  font-size: 20px;
+}
+
+/* All Scores Page */
+
+.scores-container {
+  background-color: rgb(234, 250, 254);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 408px;
+  height: 450px;
+}
+
+.scores-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.scores-noScores-title {
+  font-size: 30px;
+}
+.scores-map-wrapper {
+  display: flex;
+  max-width: 400px;
+  width: 400px;
+  max-height: 250px;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+.scores-individual-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  width: 199px;
 }

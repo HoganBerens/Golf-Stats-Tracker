@@ -1,15 +1,22 @@
 <%- include("../partials/header")%>
+<div class="container">
+  <div class="scores-container">
+    <div class="scores-title">Your Scores</div>
+    <div class="scores-map-wrapper">
+      <%if (scores.length) {scores.map((score, scoreIndex) => {%>
+      <div class="scores-individual-score">
+        <div>Score Number: <%= scoreIndex + 1%></div>
+        <div>Total Par: <%= score.totals[ scoreIndex ].totalPar %></div>
+        <div>Total Score: <%= score.totals[scoreIndex].totalScore %></div>
+        <br />
+        <% score.holes.map((hole) => {%>
+        <!-- <div><%= hole.par%></div> -->
+        <% }) %>
+      </div>
+      <%})%>
+    </div>
+    <% } %>
 
-<h2>Your Scores:</h2>
-<%if (scores.length) {scores.map((score, scoreIndex) => {%>
-<div>Score Number: <%= scoreIndex + 1%></div>
-<div>Total Par: <%= score.totals[ scoreIndex ].totalPar %></div>
-<div>Total Score: <%= score.totals[scoreIndex].totalScore %></div>
-<br />
-<% score.holes.map((hole) => {%>
-<!-- <div><%= hole.par%></div> -->
-<% }) }) } else {%>
-<div>No Scores Yet</div>
-<% } %>
-
-<a href="/scores/new">Click Here to add a new score</a>
+    <a href="/scores/new">Add A New Score</a>
+  </div>
+</div>
