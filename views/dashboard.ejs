@@ -2,35 +2,29 @@
 <div class="container">
   <div class="dashboard-container">
     <div class="dashboard-scores-container">
-      <% if (user.clubs.length) {%>
-      <a href="/scores/new">Add New Score</a><% if %>
-      <%(user.lastScore.totals.length) {%>
-      <h3>Most recent Score</h3>
-      <div class="dashboard-scores-display">
-        <div class="dashboard-score">
-          Par: <%= user.lastScore.totals[user.lastScore.totals.length
-          -1].totalPar %>
-        </div>
-        <div>
-          Total Score: <%= user.lastScore.totals[user.lastScore.totals.length
-          -1].totalScore %>
-        </div>
-      </div>
-
-      <% } else { %>
-      <div>No Scores yet</div>
-      <% } %>
+      <% if (user.clubs.length) { %>
+      <a href="/scores/new">Add New Score</a>
     </div>
     <div class="dashboard-clubs-container">
       <div class="dashboard-clubs-title">Your Clubs:</div>
       <div class="dashboard-clubs-display">
-        <%user.clubs.forEach((club) => { %>
+        <% user.clubs.forEach((club) => { %>
         <div class="dashboard-club"><%= club.name %></div>
-
-        <%}) } else { %>
-
+        <% })} else { %>
         <h2>Please enter clubs!</h2>
         <div>No Clubs yet</div>
+        <% } if (user.lastScore.totals.length) { %>
+        <h3>Most recent Score</h3>
+        <div class="dashboard-scores-display">
+          <div class="dashboard-score">
+            Par: <%= user.lastScore.totals[user.lastScore.totals.length -1].totalPar %> 
+          </div>
+          <div>
+            Total Score: <%= user.lastScore.totals[user.lastScore.totals.length-1].totalScore %> 
+          </div>
+        </div>
+        <% } else { %>
+        <div>No Scores yet</div>
         <% } %>
       </div>
       <a href="/clubs">Update Clubs</a>
