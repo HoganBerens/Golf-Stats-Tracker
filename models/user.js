@@ -29,7 +29,6 @@ const holeSchema = new Schema({
   },
   totalScore: {
     type: Number,
-    // totalSCore
   },
 });
 

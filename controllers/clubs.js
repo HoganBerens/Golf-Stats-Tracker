@@ -12,7 +12,6 @@ async function newClub(req, res) {
 }
 
 function showUpdateForm(req, res) {
-  console.log(req);
   res.render("clubs/update", {
     id: req.params.id,
     club: req.user.clubs.find((club) => club._id == req.params.id),
