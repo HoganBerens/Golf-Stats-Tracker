@@ -1,6 +1,7 @@
 # Golf-Stats-Tracker
 
 Golf-Stats-Tracker is a tool where you can record your golf round details and review all of your results. Helping you gain insight into the strongest and weakest parts of your golf game.
+Golf-Stats-Tracker is a tool that uses your previous golf scores to show your stengths and weaknesses. This information will allow you to improve the weakest parts of your golf game. Click on the URL below and Log In with your google account to begin.
 
 Screenshots
 <img src="https://i.imgur.com/3kAKiBU.png">
@@ -11,6 +12,7 @@ Screenshots
 # Technologies Used
 
 - Express
+- Node.js
 - Mongoose
 - OAuth
 - MongoDB
